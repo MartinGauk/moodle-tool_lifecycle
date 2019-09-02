@@ -23,10 +23,11 @@
  */
 
 
-$string['pluginname'] = 'Life Cycle';
-$string['plugintitle'] = 'Life Cycle';
+$string['pluginname'] = 'Kurs-Lebenszyklus';
+$string['plugintitle'] = 'Kurs-Lebenszyklus';
 
 $string['lifecycle:managecourses'] = 'Darf Kurse in tool_lifecycle verwalten.';
+$string['managecourses_link'] = 'Kurse verwalten';
 
 $string['general_config_header'] = "Allgemein & Subplugins";
 $string['config_delay_duration'] = 'Standardlänge eines Kursausschlusses';
