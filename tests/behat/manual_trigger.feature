@@ -16,6 +16,7 @@ Feature: Add a manual trigger and test view and actions as a teacher
       | teacher1 | C2 | editingteacher |
       | teacher1 | C3 | teacher |
 
+  @javascript
   Scenario: Test displayed action tools for different capabilities
     Given I log in as "admin"
     # Allow teacher role to view courses in life cycle view
@@ -23,7 +24,7 @@ Feature: Add a manual trigger and test view and actions as a teacher
     And I set the following system permissions of "Non-editing teacher" role:
       | capability | permission |
       | tool/lifecycle:managecourses | Allow |
-    And I navigate to "Life Cycle > Workflow Settings" in site administration
+    And I navigate to "Plugins > Admin tools > Life Cycle > Workflow Settings" in site administration
     And I press "Add Workflow"
     And I set the following fields to these values:
       | Title                      | My Workflow                               |
@@ -48,9 +49,10 @@ Feature: Add a manual trigger and test view and actions as a teacher
     And I should see the tool "Delete course" in the "Course 2" row of the "tool_lifecycle_remaining" table
     And I should not see the tool "Delete course" in the "Course 3" row of the "tool_lifecycle_remaining" table
 
+  @javascript
   Scenario: Manually trigger backup and course deletion
     Given I log in as "admin"
-    And I navigate to "Life Cycle > Workflow Settings" in site administration
+    And I navigate to "Plugins > Admin tools > Life Cycle > Workflow Settings" in site administration
     And I press "Add Workflow"
     And I set the following fields to these values:
       | Title                      | My Workflow                               |
@@ -86,6 +88,6 @@ Feature: Add a manual trigger and test view and actions as a teacher
     And I should see "Course 2"
     When I log out
     And I log in as "admin"
-    And I navigate to "Life Cycle > Course Backups" in site administration
+    And I navigate to "Plugins > Admin tools > Life Cycle > Course Backups" in site administration
     Then I should see "Course 1"
     And I should not see "Course 2"
